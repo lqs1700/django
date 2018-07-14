@@ -1,0 +1,21 @@
+# django
+
+1.系统自带
+INSTALLED_APPS = [
+    ...
+    'django.contrib.staticfiles',
+]
+
+2.css，js，img 路径都要设置，如下
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (
+('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ),
+('img',os.path.join(STATIC_ROOT,'img').replace('\\','/') ),
+('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ),
+)
+
+3.项目结构
+
+static 跟应用app，templates同级
